@@ -1,0 +1,327 @@
+/* Reset some default styles */
+body, p, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000033;
+    color: #333333;
+    font-size: 14px; /* Adjust the default font size */
+}
+/* CSS in style.css */
+/* Style the navigation menu toggle button */
+.hamburger-button {
+    display: block; 
+    background: #fff;
+    width:100%;
+    border: none;
+    cursor: pointer;
+    position: sticky;
+    padding: 10px;
+    z-index: 2;
+}
+
+/* Style the navigation menu */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0; /* Initially hidden on the right */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.3s ease; /* Update the property to 'right' */
+    transform-origin: top right; /* Adjust transform origin */
+    z-index: 3;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+
+.off-canvas-menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.off-canvas-menu ul li {
+    margin-bottom: 15px;
+}
+
+.off-canvas-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the main container */
+#zoom-container #bdc-section #timezone-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings */
+.zoom-heading {
+    font-size: 18px; /* Adjust the heading font size */
+    margin-bottom: 10px;
+}
+
+/* Style subheadings */
+.zoom-subheading {
+    font-size: 12px; /* Adjust the subheading font size */
+    margin-bottom: 5px;
+}
+
+/* Style textareas */
+.zoom-textarea {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: both;
+}
+
+/* Style buttons */
+.zoom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Style the note text */
+.zoom-url-input-note,
+.zoom-url-output-note {
+    font-size: 12px; /* Adjust the note font size */
+    margin-top: 10px;
+    color: #777;
+}
+
+/* Style the horizontal line */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Style the container for the business day calculator */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    max-width: 500px;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container > h1{
+    padding: 10px;
+}
+
+
+/* Style the title for the business day calculator */
+.date-calc-title {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the navigation menu toggle button */
+.nav-toggle {
+    display: flex;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Style the navigation menu */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+}
+
+/* Style navigation menu items */
+.nav-menu ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+/* Style navigation menu links */
+.nav-menu a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px; /* Adjust the menu link font size */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Style the due date title */
+.due-date-title {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the inner header */
+.inner-header {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the dropdown select elements */
+.dropDown {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Style the late note */
+.late-note {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px; /* Adjust the note font size */
+    color: #ff5722;
+}
+
+/* Style the new due date */
+.newDueDate, .newAppointmentDate {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style for the clocks container */
+.clocks-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Style for each clock */
+.clock {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/* Default badge style */
+.badge {
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Active badge style (when DST is in effect) */
+.badge.active {
+    background-color: #28a745;
+    color: #fff;
+    display: inline-block; /* Use "inline-block" to show the badge when DST is active */
+}
+
+/* Inactive badge style (when DST is not in effect) */
+.badge.inactive {
+    background-color: #fff;
+    color: #fff;
+    display: none; /* Use "none" to hide the badge by default */
+}
+
+
+
+/* Style for the additional information container */
+/* Style for the additional info container */
+.additional-info {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.additional-info{
+    display:flex;
+    flex-direction: row-reverse;
+}
+/* Style for rows and columns */
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+    text-align: center;
+}
+
+/* Style for the time and timezone spans */
+span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Style for the Arizona Time section */
+#az-time {
+    color: #007bff;
+}
+
+/* Style for the Arizona Time Zone section */
+#az-timezone {
+    color: #28a745;
+}
+
+/* Style for Your Local Time section */
+#local-time {
+    color: #007bff;
+}
+
+/* Style for Your Local Time Zone section */
+#local-timezone {
+    color: #28a745;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-button {
+        display: block; /* Show on smaller screens */
+        align-items: flex-start; /* Align it to the top */
+        justify-content: left; /* Align it to the left */
+        left: 10px; /* Adjust the left position */
+        top: 10px; /* Adjust the top position */
+    }
+
+    .off-canvas-menu {
+        position: fixed;
+        top: 0;
+        right: -250px; /* Initially hidden on the right */
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        transition: right 0.3s ease; /* Update the property to 'right' */
+        transform-origin: top right; /* Adjust transform origin */
+    }
+    
+
+    .content {
+        margin-left: 0; /* Adjust content position when the menu is open */
+    }
+}
+

@@ -1,0 +1,58 @@
+/* New CSS classes for your elements */
+.zoom-container {
+    max-width: 100%;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .zoom-heading {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .zoom-subheading {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .zoom-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .zoom-button {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .zoom-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .zoom-result {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+    margin-top: 20px;
+  }
+  
+  /* Responsive styling for a 16x9 module block */
+  @media (min-width: 768px) {
+    .zoom-container {
+      max-width: 50%;
+    }
+  }
+  

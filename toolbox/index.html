@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/toolbox/assets/inc/zoom-link-converter/zoom-link-converter.css">
+    <link rel="stylesheet" href="/toolbox/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" rel="noopener" target="_blank" href="/favicon.png">
+
+    <title>WDS ToolBox</title>
+</head>
+
+<body>
+    <div class="nav-main">
+        <!-- Hamburger Button -->
+    <button class="hamburger-button">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </button>
+
+    <!-- Off-Canvas Menu -->
+    <div class="off-canvas-menu">
+        <ul>
+            <li><a href="https://wdsdesigns.com/project-scope-translator/" target=”_blank”>Project Scope
+                    Translator</a></li>
+            <li><a href="https://wdsdesigns.com/zoom-link-tool/" target=”_blank”>Zoom Link Convert</a></li>
+            <li><a
+                    href="javascript:void(Q=prompt('Enter Confluence Cloud Search Term:',''));if(Q){try{window.open(`https://godaddy-corp.atlassian.net/wiki/search?spaces=PWD&type=page&lastModified=custom&from=2020-11-05&text=${escape(Q)}`)}catch(e){if(confirm(%27Error:%20Invalid%20input.%20Do%20you%20want%20to%20try%20a%20different%20search?%27)){window.location.reload();}}}">Confluence
+                    Search</a></li>
+            <li><a href="https://wdsdesigns.com/" target=”_blank”>Design Resource Hub</a></li>
+        </ul>
+    </div>
+            
+    </div>
+    <div class="container"><h1>WDS Guide Toolbox</h1></div>
+
+    <section id="zoom-container">
+        <div class="container">
+            <h1 class="zoom-heading">Zoom Link Convert</h1>
+            <p class="zoom-subheading">1. Paste the zoom link into the text box to generate the proper link for Jira.<br>2.
+                Then copy the resulting proper link and use that one in the Jira ticket.</p>
+            <textarea class="zoom-textarea" id="zoomUrlInput"></textarea>
+            <p class="zoom-url-input-note"></p>
+            <button class="zoom-button" type="button" onclick="convertAndDisplay()">Convert</button>
+            <button class="zoom-button" type="button" onclick="clearInputOutput()">Clear</button>
+            <hr>
+            <p class="zoom-subheading"></p>
+            <textarea class="zoom-textarea" id="zoomUrlOutput"></textarea>
+            <button class="zoom-button" type="button" id="copyButton" onclick="copyToClipboard()">Copy</button>
+            <p class="zoom-url-output-note"></p>
+        </div>
+    </section>
+    <section id="bdc-section">
+        <div class="container">
+            <div class="date-calc-title">
+                <h1>Business Day Calculator</h1>
+            </div>
+            <div class="inner-header">
+                <h2>Today's Date: <span id="todayDate"></span></h2>
+                <br>
+                <label for="futureDateRequired">Future Date Required?</label>
+                <input type="checkbox" id="futureDateRequired" name="futureDateRequired">
+                <br>
+                <!-- Date picker is now always displayed -->
+                <label for="datePicker"></label>
+                <input type="date" id="datePicker">
+            </div>
+            <div class="dropDown">
+                <label for="dropDown1">Select Build Time (# Days):</label>
+                <select id="dropDown1">
+                    <option value="4">+4 (Revision)</option>
+                    <option value="6">+6 (Revision Extended)</option>
+                    <option value="7">+7 (Simple)</option>
+                    <option value="8" selected>+8 (Standard)</option>
+                    <option value="10">+10 (ESM | Standard & W+M)</option>
+                    <option value="12">+12 (ESL | Standard w/ W+M w/ MS)</option>
+                    <option value="14">+14 (ESM | Premium & Woo)</option>
+                    <option value="18">+18 (ESL | Premium & Woo w/ MS)</option>
+                </select>
+            </div>
+            <div class="dropDown">
+                <label for="dropDown2">Select number of holidays to include:</label>
+                <select id="dropDown2">
+                    <option value="0" selected>No Holiday</option>
+                    <option value="1">+1 Holiday Included</option>
+                    <option value="2">+2 Holidays Included</option>
+                </select>
+            </div>
+            <div class="dropDown">
+                <label for="dropDown3">Additional Days for GA / QA (# Days):</label>
+                <select id="dropDown3">
+                    <option value="0" selected>No Additional Days</option>
+                    <option value="1">+1</option>
+                    <option value="2">+2</option>
+                    <option value="3">+3</option>
+                    <option value="4">+4</option>
+                    <option value="5">+5</option>
+                    <option value="6">+6</option>
+                    <option value="7">+7</option>
+                </select>
+            </div>
+            <div class="checkbox">
+                <p>
+                <label for="after4pm">Sending up site after 4 PM AZ?</label>
+                <input type="checkbox" id="after4pm" name="after4pm">
+                </p>
+            </div>
+            <div class="late-note">
+                <p>
+                    <span class="caution-sign">&#9888;</span> IMPORTANT: <span class="caution-sign">&#9888;</span> <br>Add an extra business day if you are sending up a site
+                    after 4 PM AZ.
+                    
+                </p>
+            </div>
+            <div class="contentDueDate">
+                <p>Content Submission Due Date: <span id="contentDueDate"></span></p>
+            </div>
+            <div class="newDueDate">
+                <p>Project Due Date: <span id="newDueDate"></span></p>
+            </div>
+            <div class="newAppointmentDate">
+                <p>Appointment Date: <span id="appointmentDate"></span></p>
+            </div>
+        </div>
+    </section>
+    <section id="timezone-section">
+        <div class="container">
+            <h1>Customer Time Zones</h1>
+            
+                <!-- Clocks for North American Time Zones -->
+                <div class="clock-row">
+                    <div class="clock">
+                        <h2>Pacific Time (PST)</h2>
+                        <p id="pt-time"></p>
+                        <span class="badge active">AZ</span> <!-- Use the correct class name here -->
+                    </div>
+                    <div class="clock">
+                        <h2>Mountain Time (MDT)</h2>
+                        <p id="mt-time"></p>
+                        <span class="badge inactive">AZ</span> <!-- Use the correct class name here -->
+                    </div>
+                    <div class="clock">
+                        <h2>Central Time (CST)</h2>
+                        <p id="ct-time"></p>
+                    </div>
+                    <div class="clock">
+                        <h2>Eastern Time (EST)</h2>
+                        <p id="et-time"></p>
+                    </div>
+                </div>
+            </div>
+            </section>
+            
+            <!-- Additional information for smaller screens -->
+            <section id="additional-info">
+                <div class="container">
+                <div class="row">
+                    <div>
+                        <h2>Work Time Converter</h2>
+                    </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <p><span id="local-time"></span></p>
+                    </div>
+                    <div class="column">
+                        <p><span id="az-time"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    
+    <footer>
+    </footer>
+    <!-- Include external JavaScript -->
+    <script src="/toolbox/assets/inc/zoom-link-converter/zoom-link-converter.js"></script>
+    <script src="/toolbox/assets/inc/date-calc/date-calc.js"></script>
+    <script src="/toolbox/assets/js/nav.js"></script>
+    <script src="/toolbox/assets/inc/time-zone-clocks/time-zone-clocks.js"></script>
+</body>
+
+</html>

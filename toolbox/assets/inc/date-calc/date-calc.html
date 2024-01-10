@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Due Date</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <!--<link rel="stylesheet" type="text/css" href="wdsguide.css"> -- Origonal css set disabled for testing-->
+  <link rel="stylesheet" type="text/css" href="chat-css.css">
+</head>
+    <body>
+        <header>
+        </header>
+        <section id="bdc-section">
+            <div class="container">            
+                <div class="title">    
+                    <h2>WDS Scheduler Tool</h2>
+                </div>
+                <div class="nav-main">
+                    <div class="nav-toggle">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="https://wdsdesigns.com/project-scope-translator/" target=”_blank”>Project Scope Translator</a></li>
+                        <li><a href="https://wdsdesigns.com/zoom-link-tool/" target=”_blank”>Zoom Link Convert</a></li>
+                        <li><a href="javascript:void(Q=prompt('Enter Confluence Cloud Search Term:',''));if(Q){try{window.open(`https://godaddy-corp.atlassian.net/wiki/search?spaces=PWD&type=page&lastModified=custom&from=2020-11-05&text=${escape(Q)}`)}catch(e){if(confirm(%27Error:%20Invalid%20input.%20Do%20you%20want%20to%20try%20a%20different%20search?%27)){window.location.reload();}}}">Confluence Search</a></li>
+                        <li><a href="https://wdsdesigns.com/" target=”_blank”>Design Resource Hub</a></li>
+                    </ul>
+                </nav>
+                </div>
+                            <div class="due-date-title">
+                                <h1>Business Day Calculator</h1>
+                                <!--<span><p>Select the # business day from today.<br><i>*Remember Weekends Not Counted*</i> </p></span> --->
+                            </div>
+                        
+                            <div class="inner-header">
+                                <h2>Today's Date: <span id="todayDate"></span></h2>
+                            </div>
+                        
+                            <div class="dropDown">  
+                        <label for="dropDown1">Select Build Time (# Days):</label>
+                        <select id="dropDown1">
+                            <option value="4">+4 (Revision)</option> 
+                            <option value="6">+6 (Revision Extended)</option>
+                            <option value="7">+7 (Simple)</option>
+                            <option value="8" selected>+8 (Standard)</option>
+                            <option value="10">+10 (ESM | Standard & W+M)</option>
+                            <option value="12">+12 (ESL | Standard w/ W+M w/ MS)</option>
+                            <option value="14">+14 (ESM | Premium & Woo)</option>
+                            <option value="18">+18 (ESL | Premium & Woo w/ MS)</option>
+                        </select>
+                    </div>
+
+                    <div class="dropDown">
+                        <label for="dropDown2">Select number of holidays to include:</label>
+                        <select id="dropDown2">
+                            <option value="0" selected>No Holiday</option>
+                            <option value="1">+1 Holiday Included</option>
+                            <option value="2">+2 Holidays Included</option>
+                        </select>
+                    </div>
+
+                    <div class="dropDown">
+                        <label for="dropDown3">Additional Days for GA / QA (# Days):</label>
+                        <select id="dropDown3">
+                            <option value="0" selected>No Additional Days</option>
+                            <option value="1">+1</option>
+                            <option value="2">+2</option>
+                            <option value="3">+3</option>
+                            <option value="4">+4</option>
+                            <option value="5">+5</option>
+                            <option value="6">+6</option>
+                            <option value="7">+7</option>
+                        </select>
+                    </div>
+
+                    <div class="late-note">
+                        <p><span class="caution-sign">&#9888;</span> IMPORTANT: Add an extra business day if you are sending up a site after 4 PM AZ.
+                        <span class="caution-sign">&#9888;</span></p>
+                    </div>
+                    <div class="newDueDate">  
+                        <h2>Project Due Date: <br><span id="newDueDate"></span></h2>
+                    </div>
+                    </section>
+                </div> <!-- class="container" -->
+        <footer>
+        </footer>
+            <!-- Include external JavaScript -->
+            <script src="date-calc.js"></script>
+    </body>
+</html>

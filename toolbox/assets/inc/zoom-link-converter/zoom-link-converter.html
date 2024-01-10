@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="zoom-link-converter.css">
+    <title>Zoom Link Converter</title>
+</head>
+<body>
+    <div class="zoom-container">
+        <h1 class="zoom-heading">Zoom Link Convert</h1>
+        <p class="zoom-subheading">1. Paste the zoom link into the text box to generate the proper link for Jira.<br>2. Then copy the resulting proper link and use that one in the Jira ticket.</p>
+        <textarea class="zoom-textarea" id="zoomUrlInput"></textarea>
+        <p class="zoom-url-input-note">Paste the link in the text box above with no spaces, then click the button to convert it to the Zoom link for Jira.</p>
+        <button class="zoom-button" type="button" onclick="convertAndDisplay()">Convert</button>
+        <button class="zoom-button" type="button" onclick="clearInputOutput()">Clear</button>
+        <hr>
+        <p class="zoom-subheading">Copy and use the converted link below:</p>
+        <textarea class="zoom-textarea" id="zoomUrlOutput"></textarea>
+        <button class="zoom-button" type="button" id="copyButton" onclick="copyToClipboard()">Copy</button>
+        <p class="zoom-url-output-note">Converted Zoom link will appear here</p>
+    </div>
+
+    <script src="zoom-link-converter.js"></script>
+</body>
+</html>
