@@ -34,16 +34,17 @@ function convertZoomUrl(inputUrl) {
   // Remove white spaces from the input URL
   const cleanedUrl = inputUrl.replace(/\s+/g, '');
 
-  // Define a regular expression pattern to match Zoom meeting URLs
-  const zoomUrlPattern = /^(https:\/\/[\w.-]+\.zoom\.us\/j\/\d+\?pwd=[\w-]+)$/;
+  // Version 2.0: Updated to handle new Zoom meeting URL pattern with additional numerical value after "."
+  // Define a regular expression pattern to match the new Zoom meeting URLs
+  const zoomUrlPattern = /^(https:\/\/[\w.-]+\.zoom\.us\/j\/\d+\?pwd=[\w-]+\.[1-9])$/;
 
   // Check if the cleaned URL matches the Zoom URL pattern
   if (zoomUrlPattern.test(cleanedUrl)) {
-    // Extract the meeting ID and password from the input URL
-    const [, meetingId, password] = cleanedUrl.match(/\/j\/(\d+)\?pwd=([\w-]+)/);
+    // Extract the meeting ID, password, and the new numerical value from the input URL
+    const [, meetingId, password, numericValue] = cleanedUrl.match(/\/j\/(\d+)\?pwd=([\w-]+)\.([1-9])/);
 
     // Construct the converted Zoom meeting URL
-    const convertedUrl = `https://godaddy.zoom.us/wc/join/${meetingId}?pwd=${password}`;
+    const convertedUrl = `https://godaddy.zoom.us/wc/join/${meetingId}?pwd=${password}.${numericValue}`;
 
     return convertedUrl;
   } else {
